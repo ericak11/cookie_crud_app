@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   post('/') do
     User.create({
       email: params[:email],
+      name: params[:name],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
       role: params[:role]

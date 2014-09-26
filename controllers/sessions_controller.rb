@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
   end
 
   post('/') do
-    user = User.find(name: params[:user_name])
+    user = User.find(email: params[:email])
+    binding.pry
     if user.authenticate(params[:password])
       # add a user to the session hash
       current_user_id = user.id

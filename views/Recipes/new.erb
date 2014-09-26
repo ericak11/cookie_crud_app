@@ -1,1 +1,15 @@
-<h1>Hello from New!</h1>
+<% if @user.patisserie? || @user.baker? %>
+  <h1>Add a Cookie Recipe</h1>
+  <form method="POST" action="/recipes">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" /><br/>
+    <label for="ingredients">Add Ingredients</label>
+    <input type="text" name="ingredients" id="ingredients" /><br/>
+    <label for="total_cookies">Number of cookies</label>
+    <input type="number" name="total_cookies" id="total_cookies" min="1"/><br/>
+    <label for="cost">Cost</label>
+    <input type="number" name="cost" id="cost" step="any"/><br/>
+    <input type="submit" value="Add Recipe" />
+<% else %>
+  <a href="recipes">See Recipes</a>
+<% end %>
