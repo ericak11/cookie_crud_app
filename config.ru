@@ -9,3 +9,5 @@ map('/') { run RootController }
 map('/users') { run UsersController }
 
 map('/recipes') { run RecipesController }
+
+map('/sessions') { run SessionsController }

@@ -1,23 +1,30 @@
-  class UsersController < ApplicationController
+class UsersController < ApplicationController
   get('/') do
-    render(:erb, :"Users/index")
+    render(:erb, :"users/index")
   end
 
   get('/new') do
-    render(:erb, :"Users/new")
+    render(:erb, :"users/new")
   end
 
   get('/edit') do
-    render(:erb, :"Users/edit")
+    render(:erb, :"users/edit")
   end
 
-  get('/show') do
-    render(:erb, :"Users/show")
+  get('/:id') do
+    render(:erb, :"users/show")
   end
 
   delete('/') do
   end
 
   post('/') do
+    User.create({
+      email: params[:email],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation],
+      role: params[:role]
+      })
+    redirect ("/")
   end
-  end
+end

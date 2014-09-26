@@ -1,18 +1,18 @@
   class RecipesController < ApplicationController
   get('/') do
-    render(:erb, :"Recipes/index")
+    render(:erb, :"recipes/index")
   end
 
   get('/new') do
-    render(:erb, :"Recipes/new")
+    render(:erb, :"recipes/new")
   end
 
   get('/edit') do
-    render(:erb, :"Recipes/edit")
+    render(:erb, :"recipes/edit")
   end
 
   get('/show') do
-    render(:erb, :"Recipes/show")
+    render(:erb, :"recipes/show")
   end
 
   delete('/') do
